@@ -1,0 +1,122 @@
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  max-width: 1550px;
+}
+
+.profile-dashboard {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 24fr;
+  color: #1b3a70;
+
+  .profile {
+    background-color: #f7f9fa;
+    height: 100%;
+    padding: 2rem 3rem;
+
+    &-head {
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+      background-color: white;
+      padding: 1.5rem 2rem;
+      border-radius: 1rem;
+      h5 {
+        text-decoration: underline;
+      }
+    }
+    &-card-data {
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+      background-color: white;
+      padding: 1.5rem 2rem;
+      margin: 1.5rem 0;
+      border-radius: 1rem;
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        tr {
+          border-bottom: 1px solid #dddddd;
+        }
+        td, th {
+          border:none;
+          text-align: left;
+          padding: 8px;
+          input{
+              width: 60%;          }
+          .input-data {
+            border: none;
+            color: #838d97;
+          }
+          button {
+            margin-left: 0.4rem;
+            border: none;
+            background: transparent;
+            color: cornflowerblue;
+            font-size: 0.9rem;
+          }
+        }
+        th {
+          width: 30%;
+        }
+        td {
+          color: #838d97;
+          span {
+            color: red;
+            font-size: 0.6rem;
+            margin-left: 0.4rem;
+          }
+        }
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        input:disabled {
+          background: transparent;
+        }
+      }
+    }
+
+    .otp {
+      p{
+        margin: 0;
+      }
+      hr {
+        margin: 0;
+      }
+
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+      background-color: white;
+      padding: 1rem 2rem;
+      border-radius: 1rem;
+
+      &-verify {
+        padding: 0.6rem 0;
+        form {
+          .form-group {
+            width: 30%;
+            display: inline-block;
+            .invalid-feedback {
+              font-size: 0.7rem;
+            }
+            input{
+              &:focus {
+                outline: none;
+                box-shadow: none;
+              }
+            }
+          }
+          button {
+            float: right;
+            border: none;
+            padding: 0.3rem 0.7rem;
+            background-color: #1b3a70;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

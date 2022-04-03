@@ -1,0 +1,28 @@
+<div class="container">
+  <div *ngIf="!adminFlag" class="menu-tab">
+    <img src="../../assets/images/logo-originals.png" [ngClass]="{active: selectedPageUrl == '/dashboard'}" [routerLink]="['/dashboard']">
+
+    <i class="fas fa-user" [ngClass]="{active: selectedPageUrl == '/profile'}" [routerLink]="['/profile']"></i>
+
+    <i class="fas fa-solid fa-power-off" (click)="open(mymodal)"></i>
+    <ng-template #mymodal let-modal>
+      <div class="modal-form">
+        <div class="modal-form-heading">
+          Are you sure you want to log out?
+        </div>
+        <div class="form-container">
+          <form name="form" #f="ngForm" (ngSubmit)="onLogout()" novalidate>
+            <div class="btn-container">
+              <button type="button" class="btn btn-cancel" (click)="modal.close()">Cancel</button>
+              <button class="btn btn-submit" type="submit" value="submit">
+                Logout
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+
+
+</div>

@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="sign-up-container-fluid">
+    <div class="sign-up-container">
+      <div class="project-title">
+        <img src="../../assets/images/logo-originals.png">
+       Demo POC
+      </div>
+      <div class="sign-up-form">
+        <p>
+          Log In
+        </p>
+        <form name="form"  #f="ngForm" (ngSubmit)="onSubmit()" novalidate>
+
+            <div class="form-group">
+              <label for="email">Email</label><br/>
+              <input type="email" id="email" class="form-control" name="email" placeholder="Email" [(ngModel)]="loginModel.username" #email="ngModel"
+                     [ngClass]="{'is-invalid':f.submitted && email.invalid}" autocomplete="off" required
+                     pattern="/^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|in|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i">
+              <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                <div *ngIf="email.errors.required">Email is required</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label><br/>
+              <input type="password" id="password" class="form-control" placeholder="Password" [(ngModel)]="loginModel.password" name="password"
+                     #password="ngModel" [ngClass]="{'is-invalid':f.submitted && password.invalid}" autocomplete="off" required>
+              <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                <div *ngIf="email.errors.required">Email is required</div>
+              </div>
+            </div>
+            <button type="submit" value="submit" [disabled]="!loginModel.username || !loginModel.password">Login</button>
+        </form>
+      </div>
+      <div class="make-user">
+        <div>New to our platform<br/>Join us! <br/><!--click on the below button--></div>
+        <button [routerLink]="['/register']">Get Started</button>
+      </div>
+    </div>
+  </div>
+</div>

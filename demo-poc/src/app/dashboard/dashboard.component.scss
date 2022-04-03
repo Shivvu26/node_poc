@@ -1,0 +1,14 @@
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  max-width: 1550px;
+}
+.main-dashboard {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 15fr;
+  color: #1b3a70;
+}

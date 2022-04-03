@@ -1,0 +1,53 @@
+
+.container {
+  max-width: 1550px;
+  margin: auto;
+  padding: 0;
+}
+
+.sign-up-container-fluid {
+  background-image: url("../../assets/images/sign-up-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  .sign-up-container {
+    width: 40%;
+    height: 100%;
+    padding:2rem 0 2rem 4rem;
+    background: white;
+
+    .project-title {
+      font-size: 2rem;
+      font-weight: bolder;
+      margin-bottom: 3rem;
+      color: #1b3a70;
+    }
+
+    .email-success {
+      margin: 6rem 2rem 4rem 0;
+      i{
+        color: #1b3a70;
+        margin-bottom: 1rem;
+      }
+      div{
+        line-height: 2rem;
+        margin-right: 5rem;
+      }
+      button {
+        cursor: pointer;
+        margin-top: 0.5rem;
+        padding: 0.7rem 1.5rem;
+        border: none;
+        border-radius: 8px;
+        background: #1b3a70;
+        font-size: 1.2rem;
+        color: white;
+        box-shadow: none;
+      }
+    }
+  }
+}
+

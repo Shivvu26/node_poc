@@ -1,0 +1,10 @@
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.container {
+  background-color: #f7f9fa;
+  height: 100%;
+  padding: 2rem 3rem;
+}

@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="profile-dashboard">
+    <app-sidebar></app-sidebar>
+    <div class="profile">
+      <div class="profile-head">
+        <h5>Your Profile</h5>
+      </div>
+
+      <div class="profile-card-data">
+        <table>
+          <tr>
+            <th>Name</th>
+            <td>{{name}}</td>
+          </tr>
+          <tr>
+            <th>Country</th>
+            <td>{{countryName}}</td>
+          </tr>
+          <tr>
+            <th>Company Name</th>
+            <td>FLipkart Pvt. Ltd.</td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td>{{userEmail}}</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="profile-card-data">
+        <table>
+<!--
+          <tr>
+            <th>Email</th>
+            <td *ngIf="!editEmail"><input class="input-data" disabled type="email" [(ngModel)]="userEmail"></td>
+            <td *ngIf="editEmail"><input type="email" [disabled]="disableEdit" [(ngModel)]="userEmail">
+              <button *ngIf="userEmail!=oldUserEmail" (click)="saveData()">Save</button>
+              <span *ngIf="emptyValue">Please enter a valid Email</span>
+            </td>
+            <td>
+              <button *ngIf="!editEmail" (click)="changeData('email')">Change</button>
+              <button *ngIf="editEmail" (click)="cancelSave()">Cancel</button>
+            </td>
+          </tr>
+-->
+          <tr>
+            <th>Phone</th>
+            <td *ngIf="!editPhone"><input class="input-data" disabled type="number" [(ngModel)]="userPhone"></td>
+            <td *ngIf="editPhone"><input type="text" maxlength="14" [(ngModel)]="userPhone" onlyNumber>
+              <button (click)="saveData()">Save</button>
+              <span *ngIf="emptyValue">Please enter a valid Phone Number</span>
+            </td>
+            <td>
+              <button *ngIf="!editPhone" (click)="changeData('phone')">Change</button>
+              <button *ngIf="editPhone" (click)="cancelSave()">Cancel</button>
+            </td>
+          </tr>
+          <tr>
+            <th>Password</th>
+            <td *ngIf="!editPassword">
+              <input class="input-data" disabled type="password" [(ngModel)]="userPassword">
+            </td>
+            <td *ngIf="editPassword"><input type="password" [(ngModel)]="userPassword">
+              <button (click)="saveData()">Save</button>
+              <span *ngIf="emptyValue">Please enter the Password</span>
+            </td>
+            <td>
+              <button *ngIf="!editPassword" (click)="changeData('password')">Change</button>
+              <button *ngIf="editPassword" (click)="cancelSave()">Cancel</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div *ngIf="otpSent" class="otp">
+        <p> Please verify OTP to change your account <span *ngIf="editEmail">Email</span><span *ngIf="editPhone">Phone Number</span><span *ngIf="editPassword">Password</span>.</p>
+        <hr/>
+        <div class="otp-verify">
+          <form name="form" #f="ngForm" (ngSubmit)="validateOtp()" novalidate>
+            <div class="form-group">
+              <input type="text" onlyNumber id="otp" placeholder="Enter OTP" class="form-control" name="otp" [(ngModel)]="profileOtp" #otp="ngModel" (ngModelChange)="resetOtpValidation()"
+                     [ngClass]="{ 'is-invalid': f.submitted && otp.invalid }" autocomplete="off" required minlength="6" maxlength="6" />
+              <div *ngIf="f.submitted && otp.invalid" class="invalid-feedback">
+                <div *ngIf="otp.errors.required">OTP is required</div>
+                <div *ngIf="otp.errors.minlength">OTP must be at least 6 characters</div>
+              </div>
+              <div *ngIf="otpInvalidError" class="invalid-feedback">
+                <div *ngIf="otpInvalidError">Invalid OTP</div>
+              </div>
+            </div>
+            <button type="submit" value="submit" [disabled]="!profileOtp">Confirm OTP</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
